@@ -26,7 +26,14 @@ async function init() {
 
 	svgs.forEach((svg) => {
 		svg.addEventListener('click', (ev) => {
-			window.open(ev.target.dataset.link, '_blank');
+			window.open(ev.target.dataset.link, '_self');
+		});
+
+		svg.addEventListener('mousedown', (ev) => {
+			if (ev.which === 2) {
+				ev.preventDefault();
+				window.open(ev.target.dataset.link, '_blank');
+			}
 		});
 	});
 

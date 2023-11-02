@@ -12,16 +12,19 @@
 	--dark-text: #fff;
 	--dark-bg: #333;
 	--dark-theme: #ff0000;
+	--dark-about-logo: #7b6a58;
 
 	/*! Light theme*/
 	--light-text: #000;
 	--light-bg: #fff;
 	--light-theme: #ff0000;
+	--light-about-logo: #651717;
 
 	/*! Default theme*/
 	--text-color: var(--light-text);
 	--bg-color: var(--light-bg);
 	--theme-color: var(--light-theme);
+	--about-logo: var(--light-about-logo);
 
 	/* Light mode */
 	--light-switch-shadow: #373d4e;
@@ -43,6 +46,7 @@
 	--text-color: var(--dark-text);
 	--bg-color: var(--dark-bg);
 	--theme-color: var(--dark-theme);
+	--about-logo: var(--dark-about-logo);
 	--switch-shadow-color: var(--dark-switch-shadow);
 	--switch-icon: var(--dark-switch-icon);
 	--switch-text: var(--dark-switch-text);
@@ -169,6 +173,8 @@ body {
 	right: 10%;
 	height: 250px;
 	width: 250px;
+	background-color: var(--about-logo);
+	border-radius: 35%;
 }
 
 .project-preview {
