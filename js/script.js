@@ -4,7 +4,7 @@ const aboutMe = document.getElementById('aboutMe');
 const aboutMeLogo = document.getElementById('aboutMeLogo');
 const themeSwitch = document.getElementById('theme-switch');
 const footerLinks = document.querySelector('.footer-links');
-const projectImages = document.querySelector('.project-image');
+const projectImages = document.querySelector('.project-images');
 const projectPreview = document.getElementById('projectPreview');
 const cookies = parseCookies(document.cookie);
 
@@ -24,6 +24,8 @@ async function init() {
 	aboutMeLogo.src = user.logo;
 
 	setData(user.generateFooterLinks(), footerLinks);
+
+	setData(user.generatProjects(), projectImages);
 
 	listenSvgs();
 }

@@ -88,8 +88,17 @@ class User {
 	generatProjects() {
 		let projects = '';
 		this.projects.forEach((project) => {
-			projects += ``;
+			projects += `<div class="project">
+							<a href="${project.link}"
+								><img
+									src="${project.preview}"
+									alt="Project preview"
+									class="project-image"
+								/><span class="project-text">${project.name}</span></a
+							>
+						</div>`;
 		});
+		return projects;
 	}
 
 	get age() {

@@ -196,12 +196,42 @@ body {
 .project-images {
 	width: 100%;
 	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 200px);
+	grid-template-rows: 1fr;
+}
+
+.project {
+	min-height: auto;
+	min-width: calc(1920px / 6);
+	max-width: 100%;
+}
+
+.project a {
+	position: relative;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	display: block;
 }
 
 .project-image {
-	margin: 2px;
-	max-height: calc(1080px / 6);
-	max-width: calc(1920px / 6);
+	height: auto;
+	width: 100%;
+}
+
+.project-text {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	transform: translate(-50%);
+	text-decoration: none;
+	color: var(--text-color);
+	background-color: color-mix(in srgb, var(--bg-color) 80%, transparent);
+	padding: 10px;
+	border-radius: 11px;
+	word-wrap: break-word;
+	max-width: 100%;
 }
 
 .footer {

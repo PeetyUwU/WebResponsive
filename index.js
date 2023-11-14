@@ -5,6 +5,8 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const favicon = require('serve-favicon');
 
+const PORT = 8080;
+
 app.use(cookieParser());
 app.use(favicon(path.join(__dirname, 'image', 'favicon.ico')));
 
@@ -36,8 +38,8 @@ app.use(express.static('./css'));
 app.use(express.static('./js'));
 app.use(express.static('./image'));
 
-app.listen(8080, () => {
-	console.log('Server running on: 8080');
+app.listen(PORT, () => {
+	console.log(`Server running on: ${PORT}`);
 });
 
 function parseCookies(request) {
