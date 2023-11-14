@@ -12,7 +12,7 @@
 	--dark-text: #fff;
 	--dark-bg: #333;
 	--dark-theme: #ff0000;
-	--dark-about-logo: #7b6a58;
+	--dark-about-logo: #a4897a;
 
 	/*! Light theme*/
 	--light-text: #000;
@@ -233,9 +233,12 @@ body {
 }
 
 .link-text {
-	color: var(--theme-color);
 	flex-basis: 100%;
 	text-align: center;
+}
+
+.link-text a {
+	color: var(--theme-color);
 	text-decoration: none;
 }
 

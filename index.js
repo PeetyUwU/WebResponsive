@@ -1,9 +1,12 @@
 const fs = require('fs');
+const path = require('path');
 const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
+const favicon = require('serve-favicon');
 
 app.use(cookieParser());
+app.use(favicon(path.join(__dirname, 'image', 'favicon.ico')));
 
 app.get('/', (req, res) => {
 	// console.log(req?.cookies);
@@ -15,11 +18,17 @@ app.get('/', (req, res) => {
 
 app.get('/User.js', (req, res) => {
 	let file = fs.readFileSync('./modules/classes/User.js');
+	res.contentType('application/javascript');
 	res.send(file);
 });
 
 app.get('/aboutMe', (req, res) => {
 	let file = JSON.parse(fs.readFileSync('./database/aboutMe.json'));
+	res.send(file);
+});
+
+app.get('/favicon.ico', (req, res) => {
+	let file = fs.readFileSync('./image/logo.png');
 	res.send(file);
 });
 

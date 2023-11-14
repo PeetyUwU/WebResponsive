@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @typedef {object} UserObject
  * @prop {string} name
@@ -7,6 +9,7 @@
  * @prop {string} languages
  * @prop {string} logo - url to logo
  * @prop {LinkLogo[]} link_logos
+ * @prop {Projects[]} projects
  *
  * @typedef {object} Skill
  * @prop {string} name
@@ -17,8 +20,9 @@
  * @prop {string} url
  * @prop {string} logo
  * @prop {string} name
+ *
+ * @typedef {object} Projects
  */
-
 class User {
 	/**
 	 *
@@ -31,14 +35,16 @@ class User {
 		this.hobbies = opts.hobbies;
 		this.Languages = opts.languages;
 		this.logo = opts.logo;
+		this.link_logos = opts.link_logos;
+		this.projects = opts.projects;
 	}
 
 	generateAboutMeHTML() {
 		return `<li>Name: <b>${this.name}</b></li>\n<li>Age: <b>${
 			this.age
-		}</b></li>\n<li>Skills: <table class='skill-table'><thead><tr><th>Name</th><th>Rating</th></tr></thead><tbody>${this.skills
+		}</b></li>\n<li>Skills: <table class='skill-table'><thead><tbody>${this.skills
 			.map((skill) => {
-				return `<tr><td>${skill.name}</td><td>${skill.rating}</td></tr>`;
+				return `<tr><td>${skill.name}</td></tr>`;
 			})
 			.join(
 				''
@@ -54,6 +60,29 @@ class User {
 			}
 		).join('')}</tbody></table></li>`;
 	}
+
+	generateFooterLinks() {
+		let links = '';
+		this.link_logos.forEach((link_logo) => {
+			links += `<div class="${link_logo.name.toLowerCase()} link">
+						<div
+							class="logo"
+							data-link="${link_logo.url}"
+							title="${link_logo.name}"
+						>
+							${link_logo.logo}
+						</div>
+						<div class="link-text"><a
+							href="${link_logo.url}"
+							>${link_logo.name}</a
+						></div>
+						
+					</div>`;
+		});
+		return links;
+	}
+
+	generateProjectImgs() {}
 
 	get age() {
 		let dateNow = new Date();
