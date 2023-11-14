@@ -22,6 +22,9 @@
  * @prop {string} name
  *
  * @typedef {object} Projects
+ * @prop {string} name
+ * @prop {string} preview
+ * @prop {string} link
  */
 class User {
 	/**
@@ -82,7 +85,12 @@ class User {
 		return links;
 	}
 
-	generateProjectImgs() {}
+	generatProjects() {
+		let projects = '';
+		this.projects.forEach((project) => {
+			projects += ``;
+		});
+	}
 
 	get age() {
 		let dateNow = new Date();
