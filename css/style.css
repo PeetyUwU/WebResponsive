@@ -301,5 +301,50 @@ body {
 	background: #ff0000;
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 490px) {
+	.content,
+	.about-me,
+	.project-preview,
+	.header {
+		min-width: 0;
+		width: 330px;
+	}
+
+	.about-me-logo {
+		position: relative;
+		top: auto;
+		right: auto;
+		margin-top: 30px;
+	}
+
+	.theme-switch {
+		right: 10px;
+		top: 0;
+		height: auto;
+		width: 20px;
+	}
+}
+
+@media screen and (max-width: 740px) and (min-width: 490px) {
+	.content,
+	.about-me,
+	.project-preview {
+		min-width: 0;
+		width: 390px;
+	}
+
+	.header {
+		min-width: 0;
+	}
+
+	.about-me {
+		width: 390px;
+	}
+
+	.about-me-logo {
+		position: relative;
+		top: auto;
+		right: auto;
+		margin-top: 30px;
+	}
 }
